@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F94B97D-3F18-40B2-982E-A7A030E8BBCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MilkDistributionApp</RootNamespace>
+    <AssemblyName>MilkDistributionApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassConn.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddCustomer.Designer.cs">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddMilkMan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddMilkMan.Designer.cs">
+      <DependentUpon>FrmAddMilkMan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddProducts.Designer.cs">
+      <DependentUpon>FrmAddProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddRoute.Designer.cs">
+      <DependentUpon>FrmAddRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBillPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBillPay.Designer.cs">
+      <DependentUpon>FrmBillPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCompanyID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCompanyID.Designer.cs">
+      <DependentUpon>FrmCompanyID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCustomerDetails.Designer.cs">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetailsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailsList.Designer.cs">
+      <DependentUpon>FrmDetailsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEvenOddChanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvenOddChanges.Designer.cs">
+      <DependentUpon>FrmEvenOddChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPopupPin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopupPin.Designer.cs">
+      <DependentUpon>FrmPopupPin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMassage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMassage.Designer.cs">
+      <DependentUpon>FrmMassage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMilkAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMilkAddProduct.Designer.cs">
+      <DependentUpon>FrmMilkAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMilkRate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMilkRate.Designer.cs">
+      <DependentUpon>FrmMilkRate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMilkStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMilkStatus.Designer.cs">
+      <DependentUpon>FrmMilkStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewDashbord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewDashbord.designer.cs">
+      <DependentUpon>FrmNewDashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaymentHistory.Designer.cs">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanVaccation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanVaccation.Designer.cs">
+      <DependentUpon>FrmPlanVaccation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistration.Designer.cs">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RDLCReports\DSAddCustomer.cs">
+      <DependentUpon>DSAddCustomer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\DSAddCustomer.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSAddCustomer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\DSBillCustList.cs">
+      <DependentUpon>DSBillCustList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\DSBillCustList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBillCustList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\DSPaymentHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSPaymentHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\frmAddCustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReports\frmAddCustomerReport.Designer.cs">
+      <DependentUpon>frmAddCustomerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\frmBillCustListReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReports\frmBillCustListReport.Designer.cs">
+      <DependentUpon>frmBillCustListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RDLCReports\frmPaymentHistoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RDLCReports\frmPaymentHistoryReport.Designer.cs">
+      <DependentUpon>frmPaymentHistoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBlank.Designer.cs">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlDays.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlDays.Designer.cs">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPlanVacc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPlanVacc.Designer.cs">
+      <DependentUpon>UserControlPlanVacc.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddCustomer.resx">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddMilkMan.resx">
+      <DependentUpon>FrmAddMilkMan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddProducts.resx">
+      <DependentUpon>FrmAddProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddRoute.resx">
+      <DependentUpon>FrmAddRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBillPay.resx">
+      <DependentUpon>FrmBillPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCompanyID.resx">
+      <DependentUpon>FrmCompanyID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCustomerDetails.resx">
+      <DependentUpon>FrmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailsList.resx">
+      <DependentUpon>FrmDetailsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvenOddChanges.resx">
+      <DependentUpon>FrmEvenOddChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopupPin.resx">
+      <DependentUpon>FrmPopupPin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMassage.resx">
+      <DependentUpon>FrmMassage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMilkAddProduct.resx">
+      <DependentUpon>FrmMilkAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMilkRate.resx">
+      <DependentUpon>FrmMilkRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMilkStatus.resx">
+      <DependentUpon>FrmMilkStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewDashbord.resx">
+      <DependentUpon>FrmNewDashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaymentHistory.resx">
+      <DependentUpon>FrmPaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanVaccation.resx">
+      <DependentUpon>FrmPlanVaccation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistration.resx">
+      <DependentUpon>FrmRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RDLCReports\frmAddCustomerReport.resx">
+      <DependentUpon>frmAddCustomerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReports\frmBillCustListReport.resx">
+      <DependentUpon>frmBillCustListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReports\frmPaymentHistoryReport.resx">
+      <DependentUpon>frmPaymentHistoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RDLCReports\RptAddCustomer.rdlc" />
+    <EmbeddedResource Include="RDLCReports\RptBillCustList.rdlc" />
+    <EmbeddedResource Include="RDLCReports\RptPaymentHistory.rdlc" />
+    <EmbeddedResource Include="UserControlBlank.resx">
+      <DependentUpon>UserControlBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlDays.resx">
+      <DependentUpon>UserControlDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPlanVacc.resx">
+      <DependentUpon>UserControlPlanVacc.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RDLCReports\DSAddCustomer.xsc">
+      <DependentUpon>DSAddCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReports\DSAddCustomer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSAddCustomer.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReports\DSAddCustomer.xss">
+      <DependentUpon>DSAddCustomer.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReports\DSBillCustList.xsc">
+      <DependentUpon>DSBillCustList.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReports\DSBillCustList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBillCustList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReports\DSBillCustList.xss">
+      <DependentUpon>DSBillCustList.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReports\DSPaymentHistory.xsc">
+      <DependentUpon>DSPaymentHistory.xsd</DependentUpon>
+    </None>
+    <None Include="RDLCReports\DSPaymentHistory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSPaymentHistory.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RDLCReports\DSPaymentHistory.xss">
+      <DependentUpon>DSPaymentHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\b059cee1de014e16162c1a6645c9fa2b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-health-and-vitality-milk-dairy-products-poster-background-material-image_126084.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cropmilk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_353596754_GsIBthgs4ac4LJbxGfBJwaAqWkIsiJQp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9c7a19640a51589a6178bb72e7de6b6d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e72445a7db16e972d9d98de7a8463430.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squirt-milk-pour-drawing-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_31331324_bqXgqwmlnnXaOeXwFv8CrO6oMHpAKPum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_58604536_hvwxB8pCkAg9izHYCKearPUgk8YxUlj2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_31331324_bqXgqwmlnnXaOeXwFv8CrO6oMHpAKPum_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360%28login%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo2_prev_ui %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo2_prev_ui %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natural-milk-label-logo2-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-milk-yogurt_prev_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-milk-yogurt_prev_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-milk-yogurt_prev_3_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29logoN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-creative-cow-milk_prev_ui%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milklogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milklogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ID_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pass_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-icon_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_prev_ui2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email%282%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milklogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images%28mini%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images%28max%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images%28close%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9c7a19640a51589a6178bb72e7de6b6d1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cropmilk1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b059cee1de014e16162c1a6645c9fa2b1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Para.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9c7a19640a51589a6178bb72e7de6b6d2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-health-and-vitality-milk-dairy-products-poster-background-material-image_1260841.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\240_F_353596754_GsIBthgs4ac4LJbxGfBJwaAqWkIsiJQp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\farm-fresh-cow-milk-500x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e72445a7db16e972d9d98de7a84634301.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milk-splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milk%28dash%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new%282%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancle_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancle2_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancle%282%29_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emailNew_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emailNew1_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview_prev_ui%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_prev_ui%28%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billpay-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images__Bill_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generate-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin-transparent-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Admin-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-round-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-round-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-round-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-round-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessman-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loading_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milkman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memes-loading-unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memes-loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9624768.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34354090.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\343540901.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\343540902.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\96247681.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\343540903.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pouring-milk-with-splash-blue-background_88281-5363.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8905201.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milklogo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gg-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9624376.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9959967.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o15.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-5-xxl-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Refresh-icon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Soft-Scraps-Button-Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-5-xxl-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f-removebg-preview21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\96247682.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9624768 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\96247683.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9624768 %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
